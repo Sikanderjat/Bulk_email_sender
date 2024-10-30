@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* Add styles to make the login form look nice */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .login-form {
+            max-width: 450px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .login-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<header>
+    <h3>Auto Bulk Email Sender</h3>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">SignUp</a></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <form action="/emailautomation1" method="POST">
+        <div class="login-form">
+            <h2>Login</h2>
+            <center>
+                <h4 style="background-color: rebeccapurple; color: red;">{{msg}}</h4>
+            </center>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required><br><br>
+            <input type="submit" value="Login"><br><br>
+            <span>Don't have an account? <a href="/signup">SignUp</a></span>
+
+        </div>
+    </form>
+</body>
+
+</html>

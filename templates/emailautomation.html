@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GmailAutomation</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4285f4;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4285f4;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #357ae8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3>Auto bulk Email Sender</h3>
+        <nav>
+            <ul>
+                <li><a href="/logout">logout</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+
+        <h1>Send BulkEmail</h1>
+
+        <center>
+            <h4 style="background-color: rebeccapurple; color: red;">{{msg}}</h4>
+        </center>
+        <form action="/sendemail" method="post" enctype="multipart/form-data">
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="Password">App Password:</label>
+            <input type="text" name="app_password" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="9" required></textarea>
+            <h1>Upload File</h1>
+
+            <label for="file">Choose file:</label>
+            <input type="file" name="file" required>
+            <!-- <button type="submit">Upload</button> -->
+
+            <button type="submit">Send</button>
+        </form>
+
+
+    </div>
+
+
+
+    <div class="container">
+        <h1>What is an App Password?</h1>
+        <p>An app password is a 16-digit passcode that gives less secure apps or devices permission to access your
+            Google Account. It is used instead of your regular password when signing in.</p>
+
+        <h2>Steps to Create an App Password for Gmail</h2>
+
+        <h3>Step 1: Enable Two-Step Verification</h3>
+        <ul>
+            <li>Sign in to your Google Account at <a href="https://myaccount.google.com">myaccount.google.com</a>.
+            </li>
+            <li>Navigate to Security Settings by clicking on "Security" in the left sidebar.</li>
+            <li>Set Up Two-Step Verification:
+                <ul>
+                    <li>Find the "Signing in to Google" section.</li>
+                    <li>Click on "2-Step Verification" and follow the prompts to set it up. You'll need to provide a
+                        phone number and verify it.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Step 2: Create an App Password</h3>
+        <ul>
+            <li>Go Back to Security Settings.</li>
+            <li>Find App Passwords:
+                <ul>
+                    <li>Look for the "Signing in to Google" section again.</li>
+                    <li>Click on "App passwords." You may need to sign in again.</li>
+                </ul>
+            </li>
+            <li>Select the App and Device:
+                <ul>
+                    <li>In the "Select app" dropdown, choose the app you want to generate a password for (e.g.,
+                        Mail).
+                    </li>
+                    <li>In the "Select device" dropdown, choose the device you’re using (e.g., Windows Computer).
+                    </li>
+                </ul>
+            </li>
+            <li>Generate the App Password:
+                <ul>
+                    <li>Click on "Generate." A 16-character password will appear.</li>
+                </ul>
+            </li>
+            <li>Copy the App Password:
+                <ul>
+                    <li>Make sure to copy this password, as you will need it to log in to the application.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Step 3: Use the App Password</h3>
+        <p>When prompted for a password in the app you are using (like an email client or a bulk email sender),
+            paste
+            the 16-character app password instead of your regular Google account password.</p>
+
+        <h3>Step 4: Manage App Passwords</h3>
+        <p>You can return to the App Passwords section at any time to revoke access for specific apps or generate
+            new
+            passwords.</p>
+
+        <h2>Important Notes:</h2>
+        <ul>
+            <li><strong>Security:</strong> Keep your app passwords secure. They provide access to your Google
+                account
+                without needing your regular password.</li>
+            <li><strong>Limitations:</strong> App passwords are only available if you have 2-Step Verification
+                enabled.
+            </li>
+            <li><strong>Revocation:</strong> If you suspect that your app password has been compromised, revoke it
+                immediately and create a new one.</li>
+        </ul>
+
+        <p>By following these steps, you can successfully create and manage app passwords for your Gmail account,
+            allowing you to use various applications without compromising your account's security.</p>
+    </div>
+    </form>
+</body>
+
+</html>
