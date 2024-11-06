@@ -132,7 +132,7 @@ def sendemail():
             
             server =smtplib.SMTP("smtp.gmail.com",587)
             server.starttls()
-            # server.login("universitypoornima08@gmail.com","yiys jrlh lauw hfmd")
+           
             server.login(email,app_password)
             from_ ="email"
             To_=data_list
